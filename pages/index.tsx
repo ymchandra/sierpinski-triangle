@@ -2,7 +2,7 @@ import Head from 'next/head'
 import React, {useState} from "react";
 import {GithubPicker} from "react-color";
 import STriangle from "../components/striangle";
-import {Params, updateOptions, useDefault} from "./params";
+import {Params, updateOptions, useDefault} from "../components/params";
 
 export default function Home() {
     const [model, setModel] = useState<Params>(useDefault);

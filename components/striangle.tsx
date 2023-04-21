@@ -1,7 +1,7 @@
 import React from "react";
 import {random} from "underscore";
 import getRandomPoint, {RandomPointProps} from "../utils/get-random-point";
-import {Params} from "../pages/params";
+import {Params} from "./params";
 
 const SVG_HEIGHT= 100;
 const SVG_WIDTH= 100;
