@@ -37,7 +37,7 @@ const STriangle = ({show, dots, distance, options}: Params) => {
     };
     let randomPoint = getRandomPoint(randomPointOptions);
     newPoints.push(<circle key={4} cx={`${randomPoint.newX}%`} cy={`${randomPoint.newY}%`} r={dotsRadius} fill={randomPoint.newColor}/>);
-    for (let i = 0; i < dots; i++) {
+    for (let i = 1; i < dots; i++) {
         randomPointOptions.x = randomPoint.newX;
         randomPointOptions.y = randomPoint.newY;
         randomPointOptions.distance = distance;
