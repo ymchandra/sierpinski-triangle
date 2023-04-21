@@ -25,11 +25,7 @@ const INITIAL_POINTS = {
 
 const STriangle = ({show, dots, distance, options}: Params) => {
     const {baseRadius, baseDotsColor, topDotsColor, rightDotsColor, leftDotsColor, dotsRadius} = options;
-    const newPoints = [
-        <circle key={1} cx={`${INITIAL_POINTS.x1}%`} cy={`${INITIAL_POINTS.y1}%`} r={baseRadius} fill={baseDotsColor}/>,
-        <circle key={2} cx={`${INITIAL_POINTS.x2}%`} cy={`${INITIAL_POINTS.y2}%`} r={baseRadius} fill={baseDotsColor}/>,
-        <circle key={3} cx={`${INITIAL_POINTS.x3}%`} cy={`${INITIAL_POINTS.y3}%`} r={baseRadius} fill={baseDotsColor}/>,
-    ];
+    const newPoints = [];
     const randomPointOptions: RandomPointProps = {
         basePoints: INITIAL_POINTS,
         x: random(SVG_WIDTH),
@@ -50,6 +46,9 @@ const STriangle = ({show, dots, distance, options}: Params) => {
     }
     return show ? (
         <svg height={`${SVG_HEIGHT}%`} width={`${SVG_WIDTH}%`}>
+            <circle key={1} cx={`${INITIAL_POINTS.x1}%`} cy={`${INITIAL_POINTS.y1}%`} r={baseRadius} fill={baseDotsColor}/>,
+            <circle key={2} cx={`${INITIAL_POINTS.x2}%`} cy={`${INITIAL_POINTS.y2}%`} r={baseRadius} fill={baseDotsColor}/>,
+            <circle key={3} cx={`${INITIAL_POINTS.x3}%`} cy={`${INITIAL_POINTS.y3}%`} r={baseRadius} fill={baseDotsColor}/>,
             {newPoints}
         </svg>
     ) : <></>;

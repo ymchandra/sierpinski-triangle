@@ -22,7 +22,7 @@ const Properties = ({model, onChange, children}: & Props) => {
                            onChange({...model, dots: parseInt(e.target.value)})
                        }}/>
             </div>
-            <div className={"relative mt-4"}>
+            <div className={"relative mt-4 border-2 w-1/2"}>
                 <label htmlFor="distance" className={"helperLabel"}>Distance Probability</label>
                 <input id="distance" placeholder="Distance Probability"
                        type={"range"}
@@ -33,8 +33,9 @@ const Properties = ({model, onChange, children}: & Props) => {
                        onChange={(e) => {
                            onChange({...model, distance: parseFloat(e.target.value)})
                        }}/>
+                <label className={"valueLabel"}>{model.distance}</label>
             </div>
-            <div className={"relative mt-4"}>
+            <div className={"relative mt-4 border-2 w-1/2"}>
                 <label htmlFor="base_radius" className={"helperLabel"}>Base Radius</label>
                 <input id="base_radius" placeholder="Base Radius"
                        type={"range"}
@@ -45,8 +46,9 @@ const Properties = ({model, onChange, children}: & Props) => {
                        onChange={(e) => {
                            onChange(updateOptions(model, "baseRadius", parseInt(e.target.value)))
                        }}/>
+                <label className={"valueLabel"}>{model.options.baseRadius}</label>
             </div>
-            <div className={"relative mt-4"}>
+            <div className={"relative mt-4 border-2 w-1/2"}>
                 <label htmlFor="dots_radius" className={"helperLabel"}>Dots Radius</label>
                 <input id="dots_radius" placeholder="Dots Radius"
                        type={"range"}
@@ -57,6 +59,7 @@ const Properties = ({model, onChange, children}: & Props) => {
                        onChange={(e) => {
                            onChange(updateOptions(model, "dotsRadius", parseInt(e.target.value)))
                        }}/>
+                <label className={"valueLabel"}>{model.options.dotsRadius}</label>
             </div>
             <div className={"grid grid-cols-2 w-1/2 mt-4"}>
                 <div className={"relative mt-4"}>
