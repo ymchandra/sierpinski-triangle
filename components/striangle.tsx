@@ -24,9 +24,6 @@ const INITIAL_POINTS = {
 } as BASE_POINTS;
 
 const STriangle = ({show, dots, distance, options}: Params) => {
-    if (!show) {
-        return (<></>);
-    }
     const {baseRadius, baseDotsColor, topDotsColor, rightDotsColor, leftDotsColor, dotsRadius} = options;
     const newPoints = [
         <circle key={1} cx={`${INITIAL_POINTS.x1}%`} cy={`${INITIAL_POINTS.y1}%`} r={baseRadius} fill={baseDotsColor}/>,
@@ -51,11 +48,11 @@ const STriangle = ({show, dots, distance, options}: Params) => {
         randomPoint = getRandomPoint(randomPointOptions);
         newPoints.push(<circle key={i + 5} cx={`${randomPoint.newX}%`} cy={`${randomPoint.newY}%`} r={dotsRadius} fill={randomPoint.newColor}/>);
     }
-    return (
+    return show ? (
         <svg height={`${SVG_HEIGHT}%`} width={`${SVG_WIDTH}%`}>
             {newPoints}
         </svg>
-    );
+    ) : <></>;
 }
 
 export default STriangle
