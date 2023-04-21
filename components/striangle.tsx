@@ -49,7 +49,7 @@ const STriangle = ({show, dots, distance, options}: Params) => {
             <circle key={2} cx={`${INITIAL_POINTS.x2}%`} cy={`${INITIAL_POINTS.y2}%`} r={baseRadius} fill={baseDotsColor}/>
             <circle key={3} cx={`${INITIAL_POINTS.x3}%`} cy={`${INITIAL_POINTS.y3}%`} r={baseRadius} fill={baseDotsColor}/>
             <circle key={4} cx={`${randomPoint.newX}%`} cy={`${randomPoint.newY}%`} r={dotsRadius} fill={randomPoint.newColor}/>
-            {[...Array(dots)].map((e) => renderDots(e))}
+            {[...Array(dots)].map((e, index) => renderDots(index))}
         </svg>
     ) : <></>;
 }
