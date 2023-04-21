@@ -143,12 +143,7 @@ export default function Home() {
                         <STriangle show={show}
                                    totalPoints={dots}
                                    distance={distance}
-                                   baseRadius={baseRadius}
-                                   dotsRadius={dotsRadius}
-                                   baseDotsColor={baseDotsColor}
-                                   topDotsColor={topDotsColor}
-                                   leftDotsColor={leftDotsColor}
-                                   rightDotsColor={rightDotsColor}/>
+                                   options={{baseRadius, dotsRadius, baseDotsColor, topDotsColor, leftDotsColor, rightDotsColor}}/>
                     </div>
                 </div>
             </main>

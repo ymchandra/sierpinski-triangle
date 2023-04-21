@@ -22,10 +22,7 @@ const INITIAL_POINTS = {
     y3: SVG_HEIGHT - 10,
 } as BASE_POINTS;
 
-type Props = {
-    show: boolean
-    totalPoints: number
-    distance: number
+type Options = {
     baseRadius: number
     baseDotsColor: string
     dotsRadius: number
@@ -33,10 +30,18 @@ type Props = {
     rightDotsColor: string
     leftDotsColor: string
 }
-const STriangle = ({show, totalPoints, distance, baseRadius, baseDotsColor, dotsRadius, topDotsColor, rightDotsColor, leftDotsColor}: Props) => {
+
+type Props = {
+    show: boolean
+    totalPoints: number
+    distance: number
+    options: Options
+}
+const STriangle = ({show, totalPoints, distance, options}: Props) => {
     if (!show) {
         return (<></>);
     }
+    const {baseRadius, baseDotsColor, topDotsColor, rightDotsColor, leftDotsColor, dotsRadius} = options;
     const newPoints = [
         <circle key={1} cx={`${INITIAL_POINTS.x1}%`} cy={`${INITIAL_POINTS.y1}%`} r={baseRadius} fill={baseDotsColor}/>,
         <circle key={2} cx={`${INITIAL_POINTS.x2}%`} cy={`${INITIAL_POINTS.y2}%`} r={baseRadius} fill={baseDotsColor}/>,
