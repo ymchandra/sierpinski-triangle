@@ -1,6 +1,7 @@
 import React from "react";
 import {random} from "underscore";
 import getRandomPoint, {RandomPointProps} from "../utils/get-random-point";
+import {Params} from "../pages/params";
 
 const SVG_HEIGHT= 100;
 const SVG_WIDTH= 100;
@@ -22,22 +23,7 @@ const INITIAL_POINTS = {
     y3: SVG_HEIGHT - 10,
 } as BASE_POINTS;
 
-type Options = {
-    baseRadius: number
-    baseDotsColor: string
-    dotsRadius: number
-    topDotsColor: string
-    rightDotsColor: string
-    leftDotsColor: string
-}
-
-type Props = {
-    show: boolean
-    totalPoints: number
-    distance: number
-    options: Options
-}
-const STriangle = ({show, totalPoints, distance, options}: Props) => {
+const STriangle = ({show, dots, distance, options}: Params) => {
     if (!show) {
         return (<></>);
     }
@@ -58,7 +44,7 @@ const STriangle = ({show, totalPoints, distance, options}: Props) => {
     };
     let randomPoint = getRandomPoint(randomPointOptions);
     newPoints.push(<circle key={4} cx={`${randomPoint.newX}%`} cy={`${randomPoint.newY}%`} r={dotsRadius} fill={randomPoint.newColor}/>);
-    for (let i = 0; i < totalPoints; i++) {
+    for (let i = 0; i < dots; i++) {
         randomPointOptions.x = randomPoint.newX;
         randomPointOptions.y = randomPoint.newY;
         randomPointOptions.distance = distance;
