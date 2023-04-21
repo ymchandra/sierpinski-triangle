@@ -26,7 +26,7 @@ export default function Home() {
                 <div className={"grid grid-cols-3 gap-4 w-full"}>
                     <Properties model={model} onChange={setModel}>
                         <div className={'mt-8'}>
-                            <button name={'Run'} className={"run"} onClick={createSTriangle}>Run</button>
+                            <button name={'Create'} className={"run"} onClick={createSTriangle}>Create</button>
                             <button name={'Reset'} className={"reset"} onClick={reset}>Reset</button>
                         </div>
                     </Properties>
