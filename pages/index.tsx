@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import React, {useState} from "react";
-import {GithubPicker} from "react-color";
 import STriangle from "../components/striangle";
-import {Params, updateOptions, useDefault} from "../components/params";
+import {Params, useDefault} from "../components/params";
 import Properties from "../components/properties";
 
 export default function Home() {
