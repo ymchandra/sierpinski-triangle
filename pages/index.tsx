@@ -38,10 +38,10 @@ export default function Home() {
             <main>
                 <div className={"grid grid-cols-3 gap-4 w-full"}>
                     <div id='properties'>
-                        <h1 className={"mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-3xl dark:text-white"}>
+                        <h1 className={"mb-10 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-3xl lg:text-3xl dark:text-white"}>
                             Sierpinski Triangle
                         </h1>
-                        <div className={"relative mt-2"}>
+                        <div className={"relative mt-4"}>
                             <label htmlFor="totalDots" className={"helperLabel"}>Total Dots</label>
                             <input aria-label={"Total Dots"} id="totalDots" placeholder="Total Dots"
                                    type={"number"}
@@ -50,7 +50,7 @@ export default function Home() {
                                        setDots(parseInt(e.target.value))
                                    }}/>
                         </div>
-                        <div className={"relative mt-3"}>
+                        <div className={"relative mt-4"}>
                             <label htmlFor="distance" className={"helperLabel"}>Distance Probability</label>
                             <input id="distance" placeholder="Distance Probability"
                                    type={"range"}
@@ -62,7 +62,7 @@ export default function Home() {
                                        setDistance(parseFloat(e.target.value))
                                    }}/>
                         </div>
-                        <div className={"relative mt-2"}>
+                        <div className={"relative mt-4"}>
                             <label htmlFor="base_radius" className={"helperLabel"}>Base Radius</label>
                             <input id="base_radius" placeholder="Base Radius"
                                    type={"range"}
@@ -74,7 +74,7 @@ export default function Home() {
                                        setBaseRadius(parseInt(e.target.value))
                                    }}/>
                         </div>
-                        <div className={"relative mt-2"}>
+                        <div className={"relative mt-4"}>
                             <label htmlFor="dots_radius" className={"helperLabel"}>Dots Radius</label>
                             <input id="dots_radius" placeholder="Dots Radius"
                                    type={"range"}
@@ -86,8 +86,8 @@ export default function Home() {
                                        setDotsRadius(parseInt(e.target.value))
                                    }}/>
                         </div>
-                        <div className={"grid grid-cols-2 w-1/2"}>
-                        <div className={"relative mt-2"}>
+                        <div className={"grid grid-cols-2 w-1/2 mt-4"}>
+                        <div className={"relative mt-4"}>
                             <label className={"helperLabel"}>Base dots color</label>
                             <GithubPicker
                                 onChange={(color) => {
@@ -99,7 +99,7 @@ export default function Home() {
                             />
                         </div>
 
-                        <div className={"relative mt-2"}>
+                        <div className={"relative mt-4"}>
                             <label className={"helperLabel"}>Top dots color</label>
                             <GithubPicker
                                 onChange={(color) => {
@@ -111,7 +111,7 @@ export default function Home() {
                             />
                         </div>
 
-                        <div className={"relative mt-2"}>
+                        <div className={"relative mt-4"}>
                             <label className={"helperLabel"}>Right dots color</label>
                             <GithubPicker
                                 onChange={(color) => {
@@ -122,7 +122,7 @@ export default function Home() {
                                 color={rightDotsColor}
                             />
                         </div>
-                        <div className={"relative mt-2"}>
+                        <div className={"relative mt-4"}>
                             <label className={"helperLabel"}>Left dots color</label>
                             <GithubPicker
                                 onChange={(color) => {
@@ -134,8 +134,10 @@ export default function Home() {
                             />
                         </div>
                         </div>
-                        <button name={'Run'} className={"run"} onClick={createSTriangle}>Run</button>
-                        <button name={'Reset'} className={"reset"} onClick={reset}>Reset</button>
+                        <div className={'mt-8'}>
+                            <button name={'Run'} className={"run"} onClick={createSTriangle}>Run</button>
+                            <button name={'Reset'} className={"reset"} onClick={reset}>Reset</button>
+                        </div>
                     </div>
                     <div id="sTriangle" className={"col-span-2"} hidden={show}>
                         <STriangle show={show}

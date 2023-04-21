@@ -2,8 +2,8 @@ import React from "react";
 import {random} from "underscore";
 import getRandomPoint, {RandomPointProps} from "../utils/get-random-point";
 
-const SVG_HEIGHT= 1000;
-const SVG_WIDTH= 1000;
+const SVG_HEIGHT= 100;
+const SVG_WIDTH= 100;
 export interface BASE_POINTS {
     x1: number
     y1: number
@@ -38,9 +38,9 @@ const STriangle = ({show, totalPoints, distance, baseRadius, baseDotsColor, dots
         return (<></>);
     }
     const newPoints = [
-        <circle key={1} cx={INITIAL_POINTS.x1} cy={INITIAL_POINTS.y1} r={baseRadius} fill={baseDotsColor}/>,
-        <circle key={2} cx={INITIAL_POINTS.x2} cy={INITIAL_POINTS.y2} r={baseRadius} fill={baseDotsColor}/>,
-        <circle key={3} cx={INITIAL_POINTS.x3} cy={INITIAL_POINTS.y3} r={baseRadius} fill={baseDotsColor}/>,
+        <circle key={1} cx={`${INITIAL_POINTS.x1}%`} cy={`${INITIAL_POINTS.y1}%`} r={baseRadius} fill={baseDotsColor}/>,
+        <circle key={2} cx={`${INITIAL_POINTS.x2}%`} cy={`${INITIAL_POINTS.y2}%`} r={baseRadius} fill={baseDotsColor}/>,
+        <circle key={3} cx={`${INITIAL_POINTS.x3}%`} cy={`${INITIAL_POINTS.y3}%`} r={baseRadius} fill={baseDotsColor}/>,
     ];
     const randomPointOptions: RandomPointProps = {
         basePoints: INITIAL_POINTS,
@@ -52,16 +52,16 @@ const STriangle = ({show, totalPoints, distance, baseRadius, baseDotsColor, dots
         leftDotsColor
     };
     let randomPoint = getRandomPoint(randomPointOptions);
-    newPoints.push(<circle key={4} cx={randomPoint.newX} cy={randomPoint.newY} r={dotsRadius} fill={randomPoint.newColor}/>);
+    newPoints.push(<circle key={4} cx={`${randomPoint.newX}%`} cy={`${randomPoint.newY}%`} r={dotsRadius} fill={randomPoint.newColor}/>);
     for (let i = 0; i < totalPoints; i++) {
         randomPointOptions.x = randomPoint.newX;
         randomPointOptions.y = randomPoint.newY;
         randomPointOptions.distance = distance;
         randomPoint = getRandomPoint(randomPointOptions);
-        newPoints.push(<circle key={i + 5} cx={randomPoint.newX} cy={randomPoint.newY} r={dotsRadius} fill={randomPoint.newColor}/>);
+        newPoints.push(<circle key={i + 5} cx={`${randomPoint.newX}%`} cy={`${randomPoint.newY}%`} r={dotsRadius} fill={randomPoint.newColor}/>);
     }
     return (
-        <svg height={SVG_HEIGHT} width={SVG_WIDTH}>
+        <svg height={`${SVG_HEIGHT}%`} width={`${SVG_WIDTH}%`}>
             {newPoints}
         </svg>
     );
