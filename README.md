@@ -1,3 +1,6 @@
+## Choas game
+Wiki - https://en.wikipedia.org/wiki/Chaos_game
+
 ## Getting Started
 
 Initialize the repo with
