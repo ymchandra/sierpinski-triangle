@@ -23,14 +23,14 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <main>
-                <div className={"grid grid-cols-3 gap-4 w-full"}>
+                <div className={"grid lg:grid-cols-3 gap-4 w-full sm:grid-cols-1 md:grid-cols-2"}>
                     <Properties model={model} onChange={setModel}>
                         <div className={'mt-8'}>
                             <button name={'Create'} className={"run"} onClick={createSTriangle}>Create</button>
                             <button name={'Reset'} className={"reset"} onClick={reset}>Reset</button>
                         </div>
                     </Properties>
-                    <div id="sTriangle" className={"col-span-2"} hidden={model.show}>
+                    <div id="sTriangle" className={"sm:col-span-1 sm:row-span-1 lg:col-span-2 lg:row-span-2"} hidden={model.show}>
                         <STriangle show={model.show}
                                    dots={model.dots}
                                    distance={model.distance}
