@@ -61,7 +61,7 @@ const Properties = ({model, onChange, children}: & Props) => {
                        }}/>
                 <label className={"valueLabel"}>{model.options.dotsRadius}</label>
             </div>
-            <div className={"grid grid-cols-2 w-1/2 mt-4"}>
+            <div className={"grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 w-1/2 mt-4"}>
                 <div className={"relative mt-4"}>
                     <label className={"helperLabel"}>Base dots color</label>
                     <GithubPicker
